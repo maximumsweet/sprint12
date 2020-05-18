@@ -20,12 +20,10 @@ usersRouter.get('/users/:id', (req, res) => {
 
   fsPromises.readFile(usersPath, { encoding: 'utf8' })
     .then((data) => {
-      // eslint-disable-next-line no-underscore-dangle
       if (!(JSON.parse(data).some((item) => item._id === id))) {
         res.status(404).send({ message: 'Нет пользователя с таким id' });
         return;
       }
-      // eslint-disable-next-line no-underscore-dangle
       res.send(JSON.parse(data).find((item) => item._id === id));
     })
     // eslint-disable-next-line no-unused-vars
