@@ -1,6 +1,8 @@
+/* eslint-disable no-underscore-dangle */
 const usersRouter = require('express').Router();
 const fsPromises = require('fs').promises;
 const path = require('path');
+
 const usersPath = path.join('data', 'users.json');
 
 usersRouter.get('/users', (req, res) => {
