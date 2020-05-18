@@ -9,9 +9,9 @@ cardsRouter.get('/cards', (req, res) => {
     .then((data) => {
       res.send(JSON.parse(data));
     })
+    // eslint-disable-next-line no-unused-vars
     .catch((err) => {
-      res.status(500);
-      res.send(err.message);
+      res.status(500).send({ message: 'Запрашиваемый файл не найден' });
     });
 });
 
